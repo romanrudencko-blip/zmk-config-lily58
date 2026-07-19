@@ -50,9 +50,8 @@
         };
     };
 
-&right_encoder {
-    triggers-per-rotation = <20>;
-};
+    &right_encoder { triggers-per-rotation = <20>; };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -72,7 +71,7 @@
                                   &kp LALT  &kp LGUI  &lt 1 GRAVE  &kp SPACE     &kp RET       &lt 2 DELETE  &kp BSPC  &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp B E>;
         };
 
         lower_layer {
