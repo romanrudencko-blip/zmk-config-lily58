@@ -20,3 +20,17 @@
         , <&pro_micro 19 GPIO_ACTIVE_HIGH>
         ;
 };
+/ {
+    right_encoder: encoder_right {
+        compatible = "alps,ec11";
+        /* Замените pro_micro на соответствующий label вашего контроллера */
+        a-gpios = <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        resolution = <4>;
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&right_encoder>;
+    };
+};
